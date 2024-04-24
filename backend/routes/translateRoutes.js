@@ -3,6 +3,6 @@ import { translateController } from '../controllers/transalteController.js';
 
 const router = express.Router();
 
-router.get("/translate",translateController);
+router.post("/translate",translateController);
 
 export default router;
