@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import translateRoutes from "./routes/translateRoutes.js";
-
+import languagesRoutes from "./routes/languagesRoutes.js";
 const app = express();
 
 dotenv.config();
@@ -12,6 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use("/api",translateRoutes);
+app.use("/api",languagesRoutes);
 
 const port = process.env.PORT || 4000
 
