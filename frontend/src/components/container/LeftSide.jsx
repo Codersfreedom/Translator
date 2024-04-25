@@ -5,6 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import useTranslate from '../../hooks/useTranslate';
 import usetranslatorStore from '../../zustand/store';
 import useShowToast from '../../hooks/useShowToast';
+import useFetchLanguages from '../../hooks/useFetchLanguages';
 
 
 
@@ -12,9 +13,10 @@ import useShowToast from '../../hooks/useShowToast';
 const LeftSide = () => {
   const [selectedBtn, setSelectedBtn] = useState(null);
   const { isLoading, translateText } = useTranslate();
-  const { source, target, setSource, inputText, setInput } = usetranslatorStore();
+  const { source, target, setSource, inputText, setInput,  } = usetranslatorStore();
   const textRef = useRef();
   const { showToast } = useShowToast();
+
 
   const handleSelectLanguage = (e, buttonId) => {
     if (buttonId === selectedBtn) {
@@ -49,7 +51,7 @@ const LeftSide = () => {
       return;
     }
 
-  }, [inputText])
+  }, [inputText,target,source])
 
 
 
@@ -71,7 +73,7 @@ const LeftSide = () => {
 
 
         <Stack>
-          <MenuBtn />
+          <MenuBtn isRight={false} />
 
         </Stack>
 

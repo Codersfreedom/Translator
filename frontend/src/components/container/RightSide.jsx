@@ -54,7 +54,7 @@ const RightSide = () => {
 
 
         <Stack>
-          <MenuBtn />
+          <MenuBtn isRight={true}/>
 
         </Stack>
 
